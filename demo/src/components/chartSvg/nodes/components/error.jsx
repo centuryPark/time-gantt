@@ -15,7 +15,7 @@ class Error extends PureComponent {
   };
 
   render() {
-    const { showDate, columnWidth, node, startY } = this.props;
+    const { showDate, columnWidth, node, startY, start_x } = this.props;
     return (
       <g>
         {
@@ -26,8 +26,8 @@ class Error extends PureComponent {
             return (
               <circle
                 key={pointIndex}
-                cx={startX}
-                cy={startY * 1 + NODE_ATTRIBUTE.value.y + 6}
+                cy={startX * 1 + 30}
+                cx={start_x * 1 + 5}
                 r="4"
                 stroke="#F5222D"
                 strokeWidth="1"

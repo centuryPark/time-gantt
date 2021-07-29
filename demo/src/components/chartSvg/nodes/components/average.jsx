@@ -35,13 +35,15 @@ class average extends PureComponent {
   };
 
   render() {
-    const { startX, startY, node } = this.props;
+    const { startX, start_x, startY, node } = this.props;
     const rectWidth = this.calAverageWidth(node);
     return (
-      <rect x={startX * 1}
-            y={startY * 1 + NODE_ATTRIBUTE.averaqe.y}
-            width={rectWidth} height={NODE_ATTRIBUTE.averaqe.height}
-            fill={this.getNodeNormalStatus(node) ? "#D9F7BE" : "#FFE7BA"}
+      <rect
+        x={start_x * 1 + 15}
+        y={startX * 1 + 42}
+        height={rectWidth}
+        width={NODE_ATTRIBUTE.averaqe.height}
+        fill={this.getNodeNormalStatus(node) ? "#D9F7BE" : "#FFE7BA"}
       />
     );
   }

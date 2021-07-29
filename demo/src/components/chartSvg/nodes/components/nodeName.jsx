@@ -42,7 +42,7 @@ class NodeName extends PureComponent {
   };
 
   render() {
-    const { columnWidth, data, startX, startY, node } = this.props;
+    const { columnWidth, data, startX, startY, node, start_x } = this.props;
     const { showStartPercent } = data;
     const transformX = showStartPercent * COLUMN_NUM * columnWidth;
     const valueEndX = startX * 1 + this.calValueWidth(node);
@@ -54,8 +54,9 @@ class NodeName extends PureComponent {
     }
     return (
       <text
-        x={startX * 1}
-        y={startY * 1 + NODE_ATTRIBUTE.name.y}
+        x={start_x * 1 + 15}
+        y={startX * 1 + 42 - 5}
+        textAnchor="middle"
         fontSize="12"
         transform={`translate(${ resTransformX * -1 }, 0)`}
         fill="#666666"

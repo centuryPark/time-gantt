@@ -17,8 +17,8 @@ const data = {
         startTime: '2018-03-31 23:30',
         endTime: '2018-04-01 02:25',
       },
-      averageValue: 3600000, // 毫秒
-      highlightPoints: [{
+      averageValue: 3600000, // 平均处理时常毫秒
+      highlightPoints: [{ // 小圆点
         time: '2018-04-01 02:10',
       }],
     },

@@ -19,15 +19,19 @@ class Node extends PureComponent {
   render() {
     const { node, nodeIndex, showDate, columnWidth, showStartPercent, showPercent } = this.props;
     let startX = 0;
+    // 大于 showDate = 2018-04-01 00:00
     if (moment(node.value.startTime).valueOf() > moment(showDate).valueOf()) {
       const startMillToDay = moment(node.value.startTime).valueOf() - moment(showDate).valueOf();
       const startHourPercent =  startMillToDay / 1000 / 60 / 60 / 24;
-      startX = (startHourPercent * columnWidth * COLUMN_NUM).toFixed(2);
+      startX = (startHourPercent * 20 * COLUMN_NUM).toFixed(2);
     }
     const startY = nodeIndex * ROW_HEIGHT;
 
+    const start_x = nodeIndex * 100;
+
     const nextProps = {
       startX,
+      start_x,
       startY,
       node,
       data: {
@@ -42,7 +46,7 @@ class Node extends PureComponent {
     // 名字使用自己的transform
     return (
       <g>
-        <WaitTime {...nextProps} />
+        {/* <WaitTime {...nextProps} /> */}
         <Value {...nextProps} />
         <Average {...nextProps} />
         <Error {...nextProps} />

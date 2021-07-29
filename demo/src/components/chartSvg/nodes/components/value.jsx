@@ -31,23 +31,25 @@ class Value extends PureComponent {
       <div className="g-tooltip">
         <div className="status" style={{background: getNodeNormalStatus(node) ? "#52C41A" : "#FA8C16" }}></div>
         <div className="name">
-          {node.name}
+          <div>{node.name}</div>
+          <div>{node.value.startTime}</div>
+          <div>{node.value.endTime}</div>
         </div>
       </div>
     );
   };
 
   render() {
-    const { startX, startY, node, NODE_VALUE_END_X } = this.props;
+    const { startX, start_x, startY, node, NODE_VALUE_END_X } = this.props;
     const rectWidth = this.calValueWidth(node);
     NODE_VALUE_END_X.push(startX * 1 + rectWidth * 1);
     return (
       <Popover placement="topLeft" content={this.renderToolTip(node)} title="">
         <rect
-          x={startX * 1}
-          y={startY * 1 + NODE_ATTRIBUTE.value.y}
-          width={rectWidth}
-          height={NODE_ATTRIBUTE.value.height}
+          x={start_x * 1}
+          y={startX * 1 + 42}
+          height={rectWidth}
+          width={NODE_ATTRIBUTE.value.height}
           fill={getNodeNormalStatus(node) ? "#52C41A" : "#FA8C16"}
         />
       </Popover>
