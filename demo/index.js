@@ -24,7 +24,7 @@ const data = {
     },
     {
       id: '2',
-      name: '小鹿2',
+      name: '张三',
       yAxis: '会议',
       url: 'www.baidu.com',
       value: {
@@ -38,7 +38,7 @@ const data = {
     },
     {
       id: '3',
-      name: '小鹿3',
+      name: '李四',
       yAxis: '问题',
       url: 'www.baidu.com',
       value: {
@@ -52,7 +52,7 @@ const data = {
     },
     {
       id: '4',
-      name: '小鹿4',
+      name: '王五',
       yAxis: '故障',
       url: 'www.baidu.com',
       value: {
