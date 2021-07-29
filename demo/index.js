@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
-import Gantt from 'time-gantt';
+import Gantt from './src/index.jsx';
 
 const data = {
   title: "业务甘特图",
-  showPercent: 0.1,
-  showStartPercent: 0.2,
+  showPercent: 1, // 操作框，可见区域和总长百分比
+  showStartPercent: 0, // 操作框可见区域开始位置
   showDate: '2018-04-01 00:00',
   nodes: [
     {
       id: '1',
-      name: '小鹿1',
-      yAxis: '任务1',
+      name: 'park',
+      yAxis: '事件',
       url: 'www.baidu.com',
       value: {
         startTime: '2018-03-31 23:30',
@@ -25,7 +25,7 @@ const data = {
     {
       id: '2',
       name: '小鹿2',
-      yAxis: '任务2',
+      yAxis: '会议',
       url: 'www.baidu.com',
       value: {
         startTime: '2018-04-01 03:20',
@@ -39,7 +39,7 @@ const data = {
     {
       id: '3',
       name: '小鹿3',
-      yAxis: '任务2',
+      yAxis: '问题',
       url: 'www.baidu.com',
       value: {
         startTime: '2018-04-01 01:00',
@@ -53,7 +53,7 @@ const data = {
     {
       id: '4',
       name: '小鹿4',
-      yAxis: '任务4',
+      yAxis: '故障',
       url: 'www.baidu.com',
       value: {
         startTime: '2018-04-01 02:00',
@@ -62,7 +62,7 @@ const data = {
       averageValue: 3600000,
       highlightPoints: [],
     },
-    {
+    /* {
       id: '4',
       name: '小鹿5',
       yAxis: '任务5',
@@ -247,12 +247,12 @@ const data = {
       highlightPoints: [{
         time: '2018-04-01 23:30',
       }],
-    }
+    } */
   ],
 };
 
 class App extends PureComponent {
-  render () {
+  render() {
     return (
       <div className="container">
         <Gantt data={data}></Gantt>
